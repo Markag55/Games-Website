@@ -1,0 +1,35 @@
+﻿@model List<GamesModel>
+<title>Search</title>
+<body>
+    <h1 class="text-center">Search</h1>
+    <div>
+        @using (Html.BeginForm("Search", "Home", FormMethod.Post))
+        {
+            @Html.Label("Search")
+            @Html.TextBox("search")
+            <input type="submit" id="btnSubmit" name="Submit" class="btn btn-primary" />
+        }
+    </div>
+    <table class="table table-bordered table-striped">
+        <thead>
+            <tr><th>Title</th><th>Genere</th><th>Systems</th></tr>
+        </thead>
+        <tbody>
+            @foreach (var games in Model)
+            {
+                <tr>
+                    <td>@games.Title</td>
+                    <td>@games.Genere</td>
+                    <td>@games.SystemID</td>
+                    <td>
+                        <a asp-controller="Games" asp-action="Edit"
+                           asp-route-id="@games.ID">Edit</a>
+                        <a asp-controller="Games" asp-action="Delete"
+                           asp-route-id="@games.ID">Delete</a>
+                        <a asp-controller="Home" asp-action="Template" asp-route-id="@games.ID">View</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</body>

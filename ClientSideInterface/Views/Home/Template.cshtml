@@ -1,0 +1,34 @@
+﻿@model List<GamesModel>
+<title>Current Game</title>
+<body>
+    @foreach (var games in Model)
+    {
+        <h1 class="text-center">@games.Title</h1>
+        <br />
+        <h2>Genere: @games.Genere</h2>
+        <br />
+        <h2>Rating: @games.Rating</h2>
+        <br />
+        if (games.SystemID == 1)
+        {
+            <h2>System: Nintendo Switch</h2>
+        }
+        else if (games.SystemID == 2)
+        {
+            <h2>System: XBox</h2>
+        }
+        else if (games.SystemID == 3)
+        {
+            <h2>System: IOS</h2>
+        }
+        else if (games.SystemID == 4)
+        {
+            <h2>System: Windows PC</h2>
+        }
+        else if(games.SystemID == 5)
+        {
+            <h2>System: PlayStation</h2>
+        }
+
+    }
+</body>

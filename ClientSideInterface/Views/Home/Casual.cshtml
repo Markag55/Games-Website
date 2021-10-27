@@ -1,0 +1,30 @@
+﻿@model List<GamesModel>
+<title>Casual Games</title>
+<body>
+    <div class="text-center">
+        <img class="rounded" src="~/Images/CasualPage.jpg" height="200" width="350" />
+    </div>
+    <table class="table table-bordered table-striped">
+        <thead>
+            <tr><th>Title</th><th>Genere</th><th>Systems</th><th>Rating</th></tr>
+        </thead>
+        <tbody>
+            @foreach (var games in Model)
+            {
+                <tr>
+                    <td>@games.Title</td>
+                    <td>@games.Genere</td>
+                    <td>@games.SystemID</td>
+                    <td>@games.Rating</td>
+                    <td>
+                        <a asp-controller="Games" asp-action="Edit"
+                           asp-route-id="@games.ID">Edit</a>
+                        <a asp-controller="Games" asp-action="Delete"
+                           asp-route-id="@games.ID">Delete</a>
+                        <a asp-controller="Home" asp-action="Template" asp-route-id="@games.ID">View</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</body>

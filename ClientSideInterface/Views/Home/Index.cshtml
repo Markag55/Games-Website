@@ -1,0 +1,56 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-lg-center">
+    <h1>Games</h1>
+</div>
+
+<div class="container-fluid">
+    <div class="row" id="boxes">
+        <div class="row p-4" id="divAction">
+            <a asp-controller="Home" asp-action="Action">
+                <img class="rounded" src="~/Images/action.jpg" height="200" width="350" />
+                <h3 class="text-center">Action</h3>
+            </a>
+        </div>
+
+        <div class="row p-4" id="divRolePlaying">
+
+            <a asp-controller="Home" asp-action="RolePlaying">
+                <img class="rounded" src="~/Images/rpg.jpg" height="200" width="350" />
+                <h3 class="text-center">Role-Playing</h3>
+            </a>
+
+        </div>
+
+
+        <div class="row p-4" id="divStrategy">
+            <a asp-controller="Home" asp-action="Strategy">
+                <img class="rounded" src="~/Images/strategy.jpg" height="200" width="350" />
+                <h3 class="text-center">Strategy</h3>
+            </a>
+        </div>
+
+        <div class="row p-4" id="divCasual">
+            <a asp-controller="Home" asp-action="Casual">
+                <img class="rounded" src="~/Images/casual.jpg" height="200" width="350" />
+                <h3 class="text-center">Casual</h3>
+            </a>
+        </div>
+
+        <div class="row p-4" id="divSimulation">
+            <a asp-controller="Home" asp-action="Simulation">
+                <img class="rounded" src="~/Images/simulation.jpg" height="200" width="350" />
+                <h3 class="text-center">Simulation</h3>
+            </a>
+        </div>
+
+        <div class="row p-4" id="divSports">
+            <a asp-controller="Home" asp-action="Sports">
+                <img class="rounded" src="~/Images/sports.jpg" height="200" width="350" />
+                <h3 class="text-center">Sports</h3>
+            </a>
+        </div>
+    </div>
+</div>

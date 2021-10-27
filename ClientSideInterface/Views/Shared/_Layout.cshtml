@@ -1,0 +1,36 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - ClientSideInterface</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" />
+</head>
+<body style="background-color:burlywood">
+        <nav class="navbar navbar-expand-lg" style="background-color:lightgoldenrodyellow">
+            <div class="container-fluid">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0 text-center">
+                    <li class="nav-item m-4"><a class="nav-link active" asp-controller="Home" asp-action="Index">Home</a></li>
+                    <li class="nav-item m-4"><a class="nav-link active" asp-controller="Home" asp-action="Action">Action</a></li>
+                    <li class="nav-item m-4"><a class="nav-link active" asp-controller="Home" asp-action="RolePlaying">Role-Playing</a></li>
+                    <li class="nav-item m-4"><a class="nav-link active" asp-controller="Home" asp-action="Strategy">Strategy</a></li>
+                    <li class="nav-item m-4"><a class="nav-link active" asp-controller="Home" asp-action="Casual">Casual</a></li>
+                    <li class="nav-item m-4"><a class="nav-link active" asp-controller="Home" asp-action="Simulation">Simulation</a></li>
+                    <li class="nav-item m-4"><a class="nav-link active" asp-controller="Home" asp-action="Sports">Sports</a></li>
+                    <li class="nav-item m-4"><a class="nav-link active" asp-controller="Home" asp-action="Search">Search</a></li>
+                </ul>
+            </div>
+        </nav>
+    <div class="container">
+        <a asp-controller="Games" asp-action="Add" class="btn btn-primary">Add Game</a>
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>
